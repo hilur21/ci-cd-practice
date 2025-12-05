@@ -1,0 +1,21 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Run a Script
+      run: |
+        echo "Hello from CI Pipeline!"
+        echo "Simulating build step..."
+
+    - name: Simulate Test
+      run: python3 test.py
